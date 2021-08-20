@@ -1,4 +1,4 @@
-#This is the first step for converting bdd100k to voc, we need to operate the json file to xml file
+
 
 import json
 import os
