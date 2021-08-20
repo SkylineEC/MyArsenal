@@ -5,7 +5,6 @@ from xml.etree.ElementTree import parse, Element
 
 
 pattens = ['name','xmin','ymin','xmax','ymax']
- 
 def get_annotations(xml_path):
     bbox = []
     with open(xml_path,'r') as f:
@@ -42,7 +41,7 @@ def save_viz_image(image_path,xml_path,save_path):
 
 
 if __name__ == '__main__':
-    #/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/JPEGImages
+    #替换成自己的数据集目录
     image_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/JPEGImages'
     xml_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/Annotations'
     save_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/viz_images'

@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 DEBUG = False
 nameOfCategory = 'train'
-#"/home/skyline/Documents/proj/dataset/bdd100k"
+#Bdd 100k folder
 BDD_FOLDER = "/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k"
 if DEBUG:
     XML_PATH = "./xml"
