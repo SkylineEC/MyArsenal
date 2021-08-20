@@ -62,6 +62,7 @@ if __name__ == '__main__':
 
     image_list = os.listdir(image_dir)
     num = 0
+    #设置一下最大轮数
     MAX_NUM =1000
     #for i in  image_list:
     while line:
