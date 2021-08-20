@@ -26,6 +26,7 @@ proj/MyArsenal/make_voc_dataset/visual_dataset_voc.py
 
 VOC Fomat
 
+```
 └─VOC2007
     ├─JPEGImages
     │  ├─1.jpg
@@ -58,8 +59,8 @@ VOC Fomat
     │     └─val.txt
     ├─SegmentationClass
     └─SegmentationObject
-    
-    
+```
+COCO Fomat    
     
     ─coco2017
     ├─annotations
