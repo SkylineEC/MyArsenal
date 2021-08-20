@@ -17,10 +17,11 @@ def showDataset(xml_fold):
     print(classes)
 print("Day Images:")
 showDataset('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train/night_time')
+classes.clear()
 print("Night Images:")
 showDataset('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train/day_time')
 
-classes.clear()
+
 
 '''
 20210817_bdd100k_clear
