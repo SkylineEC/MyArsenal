@@ -11,7 +11,7 @@ def moveFiles(oldPath,newPath):
     if not os.path.exists(oldPath):
         print("path not exits")
         return
-
+#good
     files = os.listdir(oldPath)
     #print(files)
     for file in tqdm(files):
