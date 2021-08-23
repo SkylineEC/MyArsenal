@@ -1,12 +1,12 @@
 import os
 import os.path
 from xml.etree.ElementTree import parse, Element
-
+from tqdm import tqdm
 
 classes = {'rider':0, 'car':0, 'train':0, 'person':0, 'bus':0, 'motor':0, 'truck':0, 'traffic sign':0, 'traffic light':0, 'bike':0}
 
 def showDataset(xml_fold):
-    files = os.listdir(xml_fold)
+    files = tqdm(os.listdir(xml_fold))
     cnt = 0 
     for xmlFile in files:
         file_path = os.path.join(xml_fold, xmlFile)
@@ -16,10 +16,9 @@ def showDataset(xml_fold):
             classes[obj.find('name').text] += 1
     print(classes)
 print("Day Images:")
-showDataset('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train/night_time')
+showDataset('/home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007/VOC2007/Annotations')
 classes.clear()
-print("Night Images:")
-showDataset('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train/day_time')
+
 
 
 

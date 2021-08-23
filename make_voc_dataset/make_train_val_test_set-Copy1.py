@@ -21,16 +21,7 @@ def _main():
     num_Source = len(total_xml_Source)
     
     
-    
-    num_Source = 5000
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     list_Source = range(num_Source)
@@ -82,17 +73,7 @@ def _main():
     total_xml_Target = os.listdir(xmlFilePath_Target)
 
     num_Target = len(total_xml_Target)
-    
-    
-    
-    num_Target = 5000
-    
-    
-    
-    
-    
-    
-    
+
     
     
     

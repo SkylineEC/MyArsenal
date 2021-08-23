@@ -14,6 +14,4 @@ def un_zip(file_name):
         zip_file.extract(names,file_name.split(".")[0])
     zip_file.close()
 
-un_zip("/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/images/100k/rename_images.zip")
-
-un_zip("/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train.zip")
+un_zip("/home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007/VOC2007/ImageSets/Main.zip")
