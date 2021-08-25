@@ -10,7 +10,7 @@ import random
 def _main():
     trainval_percent = 0.9
     train_percent = 0.5
-    xmlFilePath = '/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/train/'
+    xmlFilePath = '/home/jiawen/proj/VOC2007/Annotations/'
     
     
     
@@ -22,7 +22,6 @@ def _main():
     
     
     
-    num = 5000
     
     
     
@@ -38,7 +37,7 @@ def _main():
     tr = int(tv * train_percent)
     trainval = random.sample(list, tv)
     train = random.sample(trainval, tr)
-    imageSetsDir = "/home/jiawen/proj/MyArsenal/make_voc_dataset/VOC2007/ImageSets/Main"
+    imageSetsDir = "/home/jiawen/proj/VOC2007/ImageSets/Main"
     
     
     

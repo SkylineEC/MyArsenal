@@ -75,7 +75,7 @@ def convert_annotation(image_id,dirname):
         pos = objects[i]['polygon']
         bb = position(pos)
         # bb = convert((w, h), b)
-        cls_id = labels  # 我这里把各种类型的车都设为类别car
+        cls_id = labels.replace(" ", "_")  
         out_file.write(cls_id + " " + " ".join([str(a) for a in bb]) + '\n')
  
     if cls_id == '':

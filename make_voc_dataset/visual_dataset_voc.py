@@ -2,7 +2,7 @@ import os
 import cv2
 import re
 from xml.etree.ElementTree import parse, Element
-
+import os.path as osp
 
 pattens = ['name','xmin','ymin','xmax','ymax']
 def get_annotations(xml_path):
@@ -40,49 +40,33 @@ def save_viz_image(image_path,xml_path,save_path):
 
 
 
+
 if __name__ == '__main__':
     #替换成自己的数据集目录
-    image_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/JPEGImages'
-    xml_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/Annotations'
-    save_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/viz_images'
-
-    imgae_set = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/ImageSets/Main/trainval.txt'
-
-
+    voc_path ="/home/jiawen/proj/VOC2007/"
+    image_dir = osp.join(voc_path,"JPEGImages")
+    xml_dir = osp.join(voc_path,"Annotations")
+    save_dir = osp.join(voc_path,"Visualization Dataset")
+    imgae_set = osp.join(voc_path,"ImageSets/Main/trainval.txt")
     #白天的trainval.txt
     f_test = open(imgae_set, "r",encoding='utf-8')
     
 
     line = f_test.readline()
-    
-
-
-
-
-
     image_list = os.listdir(image_dir)
     num = 0
     #设置一下最大轮数
-    MAX_NUM =1000
+    MAX_NUM =100
     #for i in  image_list:
     while line:
         originalLabelName = line[:-1] + ".xml"
         originalImgName = line[:-1] + ".jpg"
-
-
         #location of xml annotation
         originalLabel = os.path.join(xml_dir,originalLabelName)
-
-        
         image_path = os.path.join(image_dir,originalImgName)
-        print(image_path)
-
-
-
+        
         if num == MAX_NUM:
             break
-        
         save_viz_image(image_path,originalLabel,save_dir)
         line = f_test.readline()
-
         num +=1
