@@ -17,7 +17,7 @@ def zipDir(dirpath,outFullName):
         for filename in tqdm(filenames):
             zip.write(os.path.join(path,filename),os.path.join(fpath,filename))
     zip.close()
-zipDir('/home/jiawen/proj/MyArsenal/make_voc_dataset/VOC2007/ImageSets/Main','/home/jiawen/proj/MyArsenal/make_voc_dataset/VOC2007/ImageSets/Main.zip')
+zipDir('/home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007/VOC2007/ImageSets/Main','/home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007/VOC2007/ImageSets/Main_组会前一天晚上可以用.zip')
 
 
        

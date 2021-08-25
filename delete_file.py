@@ -13,6 +13,6 @@ def removeFile(dir,postfix):
     else:
         if os.path.splitext(dir)[1] == postfix:
             os.remove(dir)
-removeFile('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/images/100k/rename_images','.jpg')
-removeFile('/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations','.xml')
+removeFile('/home/jiawen/proj/cityscapes/','.txt')
+
 
