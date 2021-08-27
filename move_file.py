@@ -1,3 +1,11 @@
+'''
+Author: your name
+Date: 2021-08-27 14:06:34
+LastEditTime: 2021-08-27 16:18:20
+LastEditors: your name
+Description: In User Settings Edit
+FilePath: /proj/MyArsenal/move_file.py
+'''
 #将一个文件夹下面的文件移动到另外一个文件夹
 
 
@@ -6,6 +14,7 @@ import os
 from tqdm import tqdm
 
 def moveFiles(oldPath,newPath):
+    print()
     if not os.path.exists(newPath):
         os.mkdir(newPath)
     if not os.path.exists(oldPath):
