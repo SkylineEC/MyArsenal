@@ -14,4 +14,5 @@ def un_zip(file_name):
         zip_file.extract(names,file_name.split(".")[0])
     zip_file.close()
 
-un_zip("/home/jiawen/proj/cityscapes/gtFine_trainvaltest.zip")
+
+un_zip("/home/jiawen/proj/VOCFromJeremy/JPEGImages.zip")

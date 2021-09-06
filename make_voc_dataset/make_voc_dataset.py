@@ -7,10 +7,10 @@ import os
 import random
 
 
-def _main():
+def make_voc_dataset(xmlFilePath,imageSetsDir):
     trainval_percent = 0.9
     train_percent = 0.5
-    xmlFilePath = '/home/jiawen/proj/VOC2007/Annotations/'
+    
     
     
     
@@ -37,7 +37,7 @@ def _main():
     tr = int(tv * train_percent)
     trainval = random.sample(list, tv)
     train = random.sample(trainval, tr)
-    imageSetsDir = "/home/jiawen/proj/VOC2007/ImageSets/Main"
+    
     
     
     
@@ -73,7 +73,5 @@ def _main():
     
 
 
-if __name__ == '__main__':
-    _main()
 
     

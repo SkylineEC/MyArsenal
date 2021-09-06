@@ -59,7 +59,7 @@ def convert_annotation(image_id,dirname):
     
     out_file = open(os.path.join(rootAnnotationsDir,dirname,"%s_leftImg8bit.txt" % (image_id)), 'w')  # 输出标签的地址
     # keys=tuple(load_dict.keys())
-    w = load_dict['imgWidth']  # 原图的宽，用于归一化
+    w = load_dict['imgWidth']  
     h = load_dict['imgHeight']
     # print(h)
     objects = load_dict['objects']
@@ -68,14 +68,13 @@ def convert_annotation(image_id,dirname):
     # object_key=tuple(objects.keys()
     cls_id = ''
     for i in range(0, nums):
-        labels = objects[i]['label']
-        # print(i)
-        #elif (labels in ['car', 'truck', 'bus', 'caravan', 'trailer']):
-        # print(labels)
+        labels = objects[i]['label'].replace(" ", "_")
+        if labels in ['out_of_roi','vegetation','ego_vehicle','pole','terrain','sidewalk','dynamic','polegroup','road','rectification_border','rail_track','sky','tunnel']:
+            continue
         pos = objects[i]['polygon']
         bb = position(pos)
         # bb = convert((w, h), b)
-        cls_id = labels.replace(" ", "_")  
+        cls_id = labels  
         out_file.write(cls_id + " " + " ".join([str(a) for a in bb]) + '\n')
  
     if cls_id == '':

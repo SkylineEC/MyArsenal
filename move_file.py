@@ -19,4 +19,4 @@ def moveFiles(oldPath,newPath):
         if os.path.isfile(os.path.join(oldPath,file)):
             shutil.copy(os.path.join(oldPath,file),os.path.join(newPath,file))
 
-moveFiles("/home/jiawen/proj/da-faster-rcnn-PyTorch/data/","/home/jiawen/proj/DA_Detection/data/")
+moveFiles("/home/jiawen/proj/VOC2007","/home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007/VOC2007")
