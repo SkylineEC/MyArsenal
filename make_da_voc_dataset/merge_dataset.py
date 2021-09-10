@@ -25,13 +25,13 @@ if __name__ == '__main__':
 
     S_annotations = "/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k/xml/Annotations/"
 
-    T_images = "/home/jiawen/proj/datasets/VOCdevkit2007/VOC2007/JPEGImages/"
+    T_images = "/home/jiawen/proj/VOCdevkit2007/VOC2007/JPEGImages/"
 
-    T_annotations = "/home/jiawen/proj/datasets/VOCdevkit2007/VOC2007/Annotations/"
+    T_annotations = "/home/jiawen/proj/VOCdevkit2007/VOC2007/Annotations/"
 
     # move_file(S_images,S_annotations,".jpg")
     # move_file(T_images,T_annotations,".xml")
     # /home/jiawen/proj/da-faster-rcnn-PyTorch/data/VOCdevkit2007
 
     move_file(S_images, T_images, ".jpg")
-    #move_file(S_annotations, T_annotations, ".xml")
+    move_file(S_annotations, T_annotations, ".xml")
