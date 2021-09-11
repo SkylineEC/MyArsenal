@@ -1,6 +1,7 @@
 import os
 import os.path
 from xml.etree.ElementTree import parse, Element
+<<<<<<< HEAD
 
 
 classes = {'rider':0, 'car':0, 'train':0, 'person':0, 'bus':0, 'motor':0, 'truck':0, 'traffic sign':0, 'traffic light':0, 'bike':0}
@@ -8,10 +9,31 @@ classes = {'rider':0, 'car':0, 'train':0, 'person':0, 'bus':0, 'motor':0, 'truck
 def showDataset(xml_fold):
     files = os.listdir(xml_fold)
     cnt = 0 
+=======
+from tqdm import tqdm
+classes = {
+    'rider': 0,
+    'car': 0,
+    'train': 0,
+    'person': 0,
+    'bus': 0,
+    'motor': 0,
+    'truck': 0,
+    'traffic_sign': 0,
+    'traffic_light': 0,
+    'bike': 0
+}
+
+
+def showDataset(xml_fold):
+    files = tqdm(os.listdir(xml_fold))
+    cnt = 0
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
     for xmlFile in files:
         file_path = os.path.join(xml_fold, xmlFile)
         dom = parse(file_path)
         root = dom.getroot()
+<<<<<<< HEAD
         for obj in root.iter('object'):#获取object节点中的name子节点
             classes[obj.find('name').text] += 1
     print(classes)
@@ -33,3 +55,12 @@ Night Images:
 'bus': 4489, 'motor': 1489, 'truck': 11689, 'traffic sign': 118050,
 'traffic light': 93664, 'bike': 2874}
 '''
+=======
+        for obj in root.iter('object'):  #获取object节点中的name子节点
+            classes[obj.find('name').text] += 1
+    print(classes)
+
+
+showDataset('/home/jiawen/proj/VOCdevkit2007/VOC2007/Annotations')
+classes.clear()
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc

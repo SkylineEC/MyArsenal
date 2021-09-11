@@ -2,10 +2,16 @@ import os
 import cv2
 import re
 from xml.etree.ElementTree import parse, Element
+<<<<<<< HEAD
 
 
 pattens = ['name','xmin','ymin','xmax','ymax']
  
+=======
+import os.path as osp
+
+pattens = ['name','xmin','ymin','xmax','ymax']
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
 def get_annotations(xml_path):
     bbox = []
     with open(xml_path,'r') as f:
@@ -41,6 +47,7 @@ def save_viz_image(image_path,xml_path,save_path):
 
 
 
+<<<<<<< HEAD
 if __name__ == '__main__':
     #/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/JPEGImages
     image_dir = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/JPEGImages'
@@ -50,11 +57,22 @@ if __name__ == '__main__':
     imgae_set = '/home/jiawen/proj/faster-rcnn/faster-rcnn.pytorch/data/VOCdevkit2007/VOC2007/ImageSets/Main/trainval.txt'
 
 
+=======
+
+if __name__ == '__main__':
+    #替换成自己的数据集目录
+    voc_path ="/home/jiawen/proj/VOC2007/"
+    image_dir = osp.join(voc_path,"JPEGImages")
+    xml_dir = osp.join(voc_path,"Annotations")
+    save_dir = osp.join(voc_path,"Visualization Dataset")
+    imgae_set = osp.join(voc_path,"ImageSets/Main/trainval.txt")
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
     #白天的trainval.txt
     f_test = open(imgae_set, "r",encoding='utf-8')
     
 
     line = f_test.readline()
+<<<<<<< HEAD
     
 
 
@@ -64,10 +82,17 @@ if __name__ == '__main__':
     image_list = os.listdir(image_dir)
     num = 0
     MAX_NUM =1000
+=======
+    image_list = os.listdir(image_dir)
+    num = 0
+    #设置一下最大轮数
+    MAX_NUM =100
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
     #for i in  image_list:
     while line:
         originalLabelName = line[:-1] + ".xml"
         originalImgName = line[:-1] + ".jpg"
+<<<<<<< HEAD
 
 
         #location of xml annotation
@@ -85,4 +110,14 @@ if __name__ == '__main__':
         save_viz_image(image_path,originalLabel,save_dir)
         line = f_test.readline()
 
+=======
+        #location of xml annotation
+        originalLabel = os.path.join(xml_dir,originalLabelName)
+        image_path = os.path.join(image_dir,originalImgName)
+        
+        if num == MAX_NUM:
+            break
+        save_viz_image(image_path,originalLabel,save_dir)
+        line = f_test.readline()
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
         num +=1

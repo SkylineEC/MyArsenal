@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #This is the first step for converting bdd100k to voc, we need to operate the json file to xml file
+=======
+
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
 
 import json
 import os
@@ -12,7 +16,11 @@ from tqdm import tqdm
 
 DEBUG = False
 nameOfCategory = 'train'
+<<<<<<< HEAD
 #"/home/skyline/Documents/proj/dataset/bdd100k"
+=======
+#Bdd 100k folder
+>>>>>>> ae8bfcd968f97cfcd5f24f5a89deb7f7a26676fc
 BDD_FOLDER = "/home/jiawen/proj/datasets/bdd100k_images_100k/bdd100k"
 if DEBUG:
     XML_PATH = "./xml"
